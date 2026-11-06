@@ -1,20 +1,20 @@
 <div align="center">
 
-# MH4U Launcher for Android
+# MH4U Beyond Mobile for Android
 
 **Monster Hunter 4 Ultimate, with an interface built around playing on your phone.**
 
-**0.1.4 · Public Beta · Android 10+ · ARM64**
+**0.1.13 · Public Beta · Android 10+ · ARM64**
 
 Gesture movement and camera · Customizable controls · Android keyboard chat
 
-[Download](#download) · [Installation](#installation) · [Controls](#controls) · [Requirements](#requirements) · [Report an Issue](#report-an-issue)
+[Download](#download) · [Installation](#installation) · [Controls](#controls) · [Requirements](#requirements) · [Report an Issue](#report-an-issue) · [Español](README.es.md)
 
 </div>
 
 ---
 
-MH4U Launcher is an Android adaptation focused on comfortable mobile play: adjustable controls, a cleaner screen, and quick access to the game's features.
+MH4U Beyond Mobile is an Android adaptation focused on comfortable mobile play: adjustable controls, a cleaner screen, and quick access to the game's features.
 
 It combines **MH4UltimateDC**, its recompiled game code, and an **Azahar-based runtime** with an Android interface and touch controls adapted by **Mr.suilxz**.
 
@@ -22,11 +22,23 @@ It combines **MH4UltimateDC**, its recompiled game code, and an **Azahar-based r
 
 ## Download
 
-Open this repository's **Releases** page and download the **ARM64 APK** from the beta release. If you download the ZIP instead, extract the APK before installing it.
+| Edition | Download size | APK filename | Setup |
+|---|---:|---|---|
+| **Lite** | ~102 MB | `MH4U-Beyond-Mobile-Lite-v0.1.13-arm64.apk` | Select your own MH4U USA ROM folder and install update 1.3.0 (.cia) in the app. |
+| **Full** | ~2.63 GB | `MH4U-Beyond-Mobile-v0.1.13-arm64.apk` | Install the APK and open it to start the game. |
 
-Android displays the app version as **0.1.4**. Check the release date and release notes to identify individual beta revisions.
+Both editions have the same controls and features. Lite keeps future app downloads smaller because you supply the game files separately. The installed version appears under **by Mr.suilxz** in the in-game side menu.
 
-The current APK's checksum is provided in [SHA256SUMS.txt](SHA256SUMS.txt).
+Check the 0.1.13 announcement for download links. [Discord community](https://discord.gg/zTJ6uJHYy)
+
+If you download a ZIP, extract the APK before installing. Verify your file against the published checksums. [SHA256SUMS.txt](SHA256SUMS.txt)
+
+## What's new in 0.1.13
+
+- Turn the camera while sprinting. Hold **Sprint** and drag the same finger, or use a second finger to look around.
+- Move the target icon, weapon button, item arrows, **Use** button and quest shortcuts independently.
+- The item selector shows how many units of the selected item you have left.
+- Lite and Full are available as separate builds of the same version.
 
 ## Features
 
@@ -56,19 +68,23 @@ Less powerful devices may run the game, but require individual testing. Virtual 
 
 ## Installation
 
-You need your own compatible copy of **Monster Hunter 4 Ultimate USA** and **game update 1.3.0**.
+### Lite
 
-1. Download and install the APK from **Releases**. If Android asks, allow installation from the app used to open the APK.
-2. Open the launcher. Under **Keep your data here**, choose a folder for your progress, settings, and mods.
-3. Under **Find your game**, select the folder containing your game.
-4. Install update 1.3.0 using the app's **Install CIA file** option. Placing the update file next to the game does not install it.
-5. Select **Play**. Start at **1× resolution** and adjust image quality after checking performance.
+1. Install the Lite APK and open the launcher. Follow the prompts for file access if Android asks.
+2. Tap **Select ROM folder** and choose the folder with your own copy of **Monster Hunter 4 Ultimate USA**.
+3. Tap **Install CIA update**, select the **1.3.0** CIA, and wait for installation to finish. If the launcher detects the update in the game folder, you can install it from there.
+4. Select **Play**.
 
-### Updating the beta
+### Full
 
-Install the new APK over the previous version and keep using the same data folder. Back up your progress before updating.
+1. Install the Full APK.
+2. Open the app to start the game.
 
-If Android refuses the update, record the exact installation message before uninstalling anything. Uninstalling or clearing app data may remove access to your existing configuration.
+Start at **1× resolution** in either edition. Adjust image quality after checking performance in an actual hunt.
+
+### Updating or switching editions
+
+Back up your progress, then install the APK over the previous version and keep using the same data folder. Lite and Full use the same app identity and signing certificate, so installing one replaces the other. If you switch to Lite for the first time, complete the ROM and CIA setup above.
 
 ## Controls
 
@@ -76,37 +92,30 @@ If Android refuses the update, record the exact installation message before unin
 |---|---|
 | Move your character | Touch and drag in a free area on the left half of the screen. |
 | Move the camera | Swipe in a free area on the right half. |
-| Walk and look around together | Use both thumbs; each gesture keeps its own input. |
+| Move and look around together | Use both thumbs to move and look. While holding **Sprint**, you can also drag that finger to turn the camera. |
 | Navigate menus, storage boxes, and lists | Enable **Menus** at the bottom left. Disable it to control character movement again. |
 | Show or hide the secondary screen | Tap **Touch**. |
 | Open messages | Tap the **talking-character icon**. |
 | Move the message shortcut | Drag the character icon. |
 | Expand the compact message history | Hold the character icon. Tap **—** to collapse the history. |
 | Adjust the compact history | Drag its handle to move it; pinch with two fingers to resize it. |
-| Select an item | Open the compact selector from the item button and use its arrows. **Use / sheathe** sends the game's original action. |
+| Select an item | Open the compact selector with **Item** and use its arrows. The selector shows the quantity of the selected item. |
 | Restore the recommended screen layout | Open **Options → Display**, then select **Recommended: full game + floating touch**. |
 
 Buttons, the touch screen, and floating windows take priority over gestures that begin inside their own interactive areas. Button actions depend on the current context and equipped weapon.
 
 ## Beta Status
 
-The current build passes **119 automated tests**, along with signature and library-alignment checks. These checks do not replace real gameplay testing on physical phones.
+Both 0.1.13 APKs passed **165 automated tests** per edition, plus signing and native-library checks. The Lite ROM and CIA import flow still needs testing on physical phones.
 
-The main areas requiring further validation are:
-
-- Accepting hunter and Palico names entered through the Android keyboard.
-- Keyboard activation and message sending and receiving during multiplayer sessions.
-- Simultaneous gestures, menu navigation, and physical controller behavior across devices.
-- Stability, temperature, and performance during longer sessions.
-
-The compact item selector uses the game's original inputs. **Read the selected item's name, icon, and quantity from the game's HUD.** The mobile selector does not display a separate inventory or directly select items by ID.
+Please report issues with name entry, multiplayer chat, touch and controller input, or performance during longer hunts. FPS and image quality vary by device, graphics backend and resolution.
 
 ## Report an Issue
 
 Open an **Issue** in this repository and include:
 
 - Phone model, processor, physical RAM, and Android version.
-- The downloaded APK filename or release date.
+- Whether you use Lite or Full and the downloaded APK filename.
 - Graphics backend, rendering resolution, and enabled mods.
 - Steps to reproduce the problem, what you expected, and what happened.
 - A screenshot, short video, or error log if available.
@@ -126,4 +135,4 @@ The Android adaptation follows **GNU GPLv3**. MH4UltimateDC publishes its projec
 
 Distribution of the GPL-covered APK must also provide the corresponding source code, including modifications and the build files needed for that version, under the applicable license terms. An APK and README alone do not replace the corresponding source.
 
-The original game remains the property of its respective rights holders. This is a community project with no affiliation with CAPCOM or Nintendo. You must provide your own compatible game files; this README does not provide downloads of the game or its update.
+The original game remains the property of its respective rights holders. This is a community project with no affiliation with CAPCOM or Nintendo. The Lite edition uses your own compatible game files.
